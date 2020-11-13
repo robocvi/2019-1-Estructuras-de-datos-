@@ -1,0 +1,118 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 420478976 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2893), pid=32341, tid=32462
+#
+# JRE version: OpenJDK Runtime Environment (11.0.4+11) (build 11.0.4+11-post-Ubuntu-1ubuntu218.04.3)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.4+11-post-Ubuntu-1ubuntu218.04.3, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P" (or dumping to /home/roberto/PracticasEDD/practica7xd/core.32341)
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: /home/roberto/PracticasEDD/practica7xd/target/surefire/surefirebooter15932835757830499972.jar /home/roberto/PracticasEDD/practica7xd/target/surefire/surefire8199049847566496998tmp /home/roberto/PracticasEDD/practica7xd/target/surefire/surefire_015193580930863029277tmp
+
+Host: AMD A9-9425 RADEON R5, 5 COMPUTE CORES 2C+3G, 2 cores, 3G, Ubuntu 18.04.2 LTS
+Time: Mon Oct 28 18:42:20 2019 CST elapsed time: 9 seconds (0d 0h 0m 9s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fc58c2dc000):  JavaThread "Time-limited test" daemon [_thread_in_vm, id=32462, stack(0x00007fc565ae8000,0x00007fc565be9000)]
+
+Stack: [0x00007fc565ae8000,0x00007fc565be9000],  sp=0x00007fc565be6510,  free space=1017k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xde4547]
+V  [libjvm.so+0xde519b]
+V  [libjvm.so+0x6511a5]
+V  [libjvm.so+0xbbed38]
+V  [libjvm.so+0xbb5ebd]
+V  [libjvm.so+0x76f53f]
+V  [libjvm.so+0x76f7ae]
+V  [libjvm.so+0x77b820]
+V  [libjvm.so+0x7f6969]
+V  [libjvm.so+0x7f75c2]
+V  [libjvm.so+0x7f7a29]
+V  [libjvm.so+0x72ef95]
+V  [libjvm.so+0x730073]
+V  [libjvm.so+0x730de5]
+V  [libjvm.so+0xb080f4]
+V  [libjvm.so+0x5cca14]
+V  [libjvm.so+0x818f7b]
+V  [libjvm.so+0xc80869]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~RuntimeStub::_new_array_Java
+J 959 c2 mx.unam.ciencias.edd.MonticuloMinimo.agrega(Lmx/unam/ciencias/edd/ComparableIndexable;)V (90 bytes) @ 0x00007fc57c464de8 [0x00007fc57c4648e0+0x0000000000000508]
+j  mx.unam.ciencias.edd.test.TestMonticuloMinimo.testGet()V+92
+v  ~StubRoutines::call_stub
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0 java.base@11.0.4
+j  jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100 java.base@11.0.4
+j  jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6 java.base@11.0.4
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+59 java.base@11.0.4
+j  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;+15
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.junit.internal.runners.statements.InvokeMethod.evaluate()V+12
+j  org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call()Ljava/lang/Throwable;+14
+j  org.junit.internal.runners.statements.FailOnTimeout$CallableStatement.call()Ljava/lang/Object;+1
+j  java.util.concurrent.FutureTask.run()V+39 java.base@11.0.4
+j  java.lang.Thread.run()V+11 java.base@11.0.4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fc58c2cebe0, length=10, elements={
+0x00007fc58c012000, 0x00007fc58c117000, 0x00007fc58c119000, 0x00007fc58c11e800,
+0x00007fc58c120800, 0x00007fc58c122800, 0x00007fc58c124800, 0x00007fc58c15b800,
+0x00007fc58c160000, 0x00007fc58c2dc000
+}
+
+Java Threads: ( => current thread )
+  0x00007fc58c012000 JavaThread "main" [_thread_blocked, id=32342, stack(0x00007fc594117000,0x00007fc594218000)]
+  0x00007fc58c117000 JavaThread "Reference Handler" daemon [_thread_blocked, id=32349, stack(0x00007fc5671f7000,0x00007fc5672f8000)]
+  0x00007fc58c119000 JavaThread "Finalizer" daemon [_thread_blocked, id=32350, stack(0x00007fc5670f6000,0x00007fc5671f7000)]
+  0x00007fc58c11e800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=32351, stack(0x00007fc566620000,0x00007fc566721000)]
+  0x00007fc58c120800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=32352, stack(0x00007fc56651f000,0x00007fc566620000)]
+  0x00007fc58c122800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=32353, stack(0x00007fc56641e000,0x00007fc56651f000)]
+  0x00007fc58c124800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=32354, stack(0x00007fc56631d000,0x00007fc56641e000)]
+  0x00007fc58c15b800 JavaThread "Service Thread" daemon [_thread_blocked, id=32355, stack(0x00007fc56621c000,0x00007fc56631d000)]
+  0x00007fc58c160000 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=32357, stack(0x00007fc566019000,0x00007fc56611a000)]
+=>0x00007fc58c2dc000 JavaThread "Time-limited test" daemon [_thread_in_vm, id=32462, stack(0x00007fc565ae8000,0x00007fc565be9000)]
+
+Other Threads:
+  0x00007fc58c114000 VMThread "VM Thread" [stack: 0x00007fc5672fa000,0x00007fc5673fa000] [id=32348]
+  0x00007fc58c15e000 WatcherThread [stack: 0x00007fc56611c000,0x00007fc56621c000] [id=32356]
+  0x00007fc58c028000 GCTaskThread "GC Thread#0" [stack: 0x00007fc5900b3000,0x00007fc5901b3000] [id=32343]
+  0x00007fc558001000 GCTaskThread "GC Thread#1" [stack: 0x00007fc5657e6000,0x00007fc5658e6000] [id=32378]
+  0x00007fc58c043000 ConcurrentGCThread "G1 Main Marker" [stack: 0x00007fc5740a0000,0x00007fc5741a0000] [id=32344]
+  0x00007fc58c044800 ConcurrentGCThread "G1 Conc#0" [stack: 0x00007fc56e0b0000,0x00007fc56e1b0000] [id=32345]
+  0x00007fc58c080000 ConcurrentGCThread "G1 Refine#0" [stack: 0x00007fc567cfe000,0x00007fc567dfe000] [id=32346]
+  0x00007fc55c001800 ConcurrentGCThread "G1 Refine#1" [stack: 0x00007fc5656e4000,0x00007fc5657e4000] [id=32464]
+  0x00007fc58c081800 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x00007fc567bfc000,0x00007fc567cfc000] [id=32347]
+
+Threads with active compile tasks:
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fc58c00ea20] Heap_lock - owner thread: 0x00007fc58c2dc000
+
+Heap address: 0x00000000c3600000, size: 970 MB, Compressed Oops mode: 32-bit
